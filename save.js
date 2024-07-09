@@ -11,7 +11,7 @@ window.addEventListener('message', (event) => {
                 session: JSON.parse(JSON.stringify(sessionStorage))
             }
         }, '*');
-    } else if (JSON.Stringify(event.data).includes("cookies") && JSON.Stringify(event.data).includes("local") && JSON.Stringify(event.data).includes("session") && JSON.Stringify(event.data).includes("storage")) {
+    } else if (JSON.stringify(event.data).includes("cookies") && JSON.stringify(event.data).includes("local") && JSON.stringify(event.data).includes("session") && JSON.stringify(event.data).includes("storage")) {
         event.data.cookies.forEach(cookie => {
             if (cookie.trim()) {
                 document.cookie = cookie.trim() + '; path=/';
